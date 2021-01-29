@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "products": {
+      "collection": "product",
+      "via": "orders",
+      "dominant": true
+    },
+    "total_in_cents": {
+      "type": "biginteger"
+    },
+    "subtotal_in_cents": {
+      "type": "biginteger"
+    },
+    "taxes_in_cents": {
+      "type": "biginteger"
+    },
+    "product_qty": {
+      "type": "json"
+    },
+    "shipping_name": {
+      "type": "string"
+    },
+    "shipping_country": {
+      "type": "string"
+    },
+    "shipping_address": {
+      "type": "string"
+    },
+    "shipping_state": {
+      "type": "string"
+    },
+    "shipping_zip": {
+      "type": "string"
+    },
+    "payment_intent_id": {
+      "type": "string"
+    }
+  }
+}
